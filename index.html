@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Game Title: edit this -->
+    <title>The Quad</title>
+    <!-- End of Game Title -->
+
+    <!-- Remove this if you don't use the Tangerine font in your
+         stylesheet -->
+    <link href='http://fonts.googleapis.com/css?family=Tangerine'
+          rel='stylesheet' type='text/css'>
+          
+    <!-- This is your game's stylesheet, modify it if you like. -->
+    <link media="screen"
+          rel="stylesheet" href="css/undum.css">
+
+    <!-- Suppport for mobile devices. -->
+    <meta name="viewport" content="user-scalable=no, width=device-width">
+    <link rel="apple-touch-icon" href="css/img/iphone/icon.png">
+    <link rel="apple-touch-startup-image" href="css/img/iphone/splash.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!--[if !IE]>-->
+    <link media="only screen and (max-width: 1980px)"
+          rel="stylesheet" type="text/css" href="css/undum-mobile.css">
+    <!--<![endif]-->
+    
+    <link href="css/quadbutton_textarea.css" rel="stylesheet" type="text/css">
+  
+    <style type="text/css">
+		.js #fouc{
+			display:none;
+		}
+	</style>
+    
+    <script type="text/javascript">
+		document.documentElement.className='js';
+    </script>
+    
+  </head>
+  <body id="webapp">
+  <div id="fouc">
+    <!-- This isn't needed and isn't visible in desktop versions,
+         because we can display the character information and the
+         tools onscreen all the time. -->
+   <div id="toolbar">
+      <!-- Set this to be a small version of the title, for the
+           toolbar on mobile devices. -->
+      <h1>The Quad</h1>
+      <div class="nav">
+        <a href="#" class="button" id="menu-button" onClick="menuBadge();$('#title').hide(0);">The Storyteller</a>
+      </div>
+      <div class="nav" id="tallyman">
+        <a href="#" class="button" id="menu-button" onClick="showStats();$('#title').hide(0);">The Tallyman</a>
+      </div>
+      <div class="nav" id="scribe">
+        <a href="#" class="button" id="menu-button" onClick="oracleBadge();$('#title').hide(0);">The Scribe</a>
+      </div>
+    </div>
+    <ul id="menu">
+      <li><center><h1>Your Stories</h1></center></li>
+      <ol id="storymenu">
+      <li><a href="#content_wrapper" onClick="theBeginning();">The Adventure Begins</a></li>
+      <li><a href="#content_wrapper" onClick="theApprentice();">The Apprentice</a></li>
+      <li><a href="#content_wrapper" onClick="theJourneyman();">The Journeyman</a></li>
+      <li><a href="#content_wrapper" onClick="theSailor();">The Sailor</a></li>
+      <li><a href="#content_wrapper" onClick="theInvestor();">The Investor</a></li>
+      <!--li><a href="#content_wrapper" onClick="theAlchemist();">The Alchemist</a></li-->
+      <li><a href="#content_wrapper" onClick="theEngineer();">The Engineer</a></li>
+      <!--li><a href="#content_wrapper" onClick="theTradesman();">The Tradesman</a></li-->
+      <li><a href="#content_wrapper" onClick="theEnd();">The Master</a></li>
+      </ol>
+      <li><center><h1>The Court</h1></center></li>
+      <ol id="storymenu">
+      <li><a href="#" onClick="showStats();$('#title').hide(0);">The Tallyman</a></li>
+      <li><a href="#" onClick="oracleBadge();$('#title').hide(0);">The Scribe</a></li>
+      </ol>
+      <li><center><a href="#content_wrapper">RETURN</a></center></li>
+    </ul>
+
+    <div id="page">
+
+      <div id="tools_wrapper">
+        <div id="info_panel" class="tools left">
+
+        <!-- special tools panel -->
+       
+        <h1>Calculator</h1>
+        <p>
+        <center>
+        <font class="menutextsize">
+		<p>A <strong>quadratic function</strong> is a function of the form<br/>
+		<h3>
+        <center>
+        <div class="h3textsize">
+        <strong><em><i>f(x)</i></em></strong> = 
+        <font color='#FF0000'><strong><em><i>a</i></em></strong></font>x<sup>2</sup> + 
+        <font color='#FF0000'><strong><em><i>b</i></em></strong></font>x + 
+        <font color='#FF0000'><strong><em><i>c</i></em></strong></font>
+        </div>
+        </center>
+        </h3>
+		</p>
+		where 
+        <font color='#FF0000'><strong><em>a</em></strong></font>, 
+        <font color='#FF0000'><strong><em>b</em></strong></font> and 
+        <font color='#FF0000'><strong><em>c</em></strong></font>
+		are real numbers and <font color='#FF0000'><strong><em>a</em></strong></font>
+		is not equal to zero(0). The graph of the <strong><em>quadratic function</em></strong> is  called a <em>parabola.</em>
+		It is a <strong><em>U</em></strong> shaped curve that may open up or down depending on the sign of coefficient
+		<font color='#FF0000'><strong><em><i>a</i></em></strong></font>.
+        </font>
+        </center>
+		</p>
+		<center>
+        <font class="menutextsize">
+    	<form name="quadCalc">
+		<input type="text" maxlength="8" name="valA" value="8" size="4">x<sup>2</sup>+
+		<input type="text" maxlength="8" name="valB" value="10" size="4">x+
+		<input type="text" maxlength="8" name="valC" value="2" size="4">=0<br />
+		
+        <textarea rows="3" name="answer1" class="answertext" width="144px" height="52px"></textarea><br />
+       
+		The area bounded by the curve above the x-axis is: <input type="text" name="answer2" height="40px" readonly size="6"> sq. units.<br />
+		<!--The gradient of the curve at any point is: <input type="text" name="answer3" size="10">.<br /-->
+		The <input type="text" name="answer4" readonly size="8"> value of the curve occurs at co-ordinates: <input type="text" name="answer5" readonly width="80" size="10">.
+		</form>
+        </font>
+         <div class='buttons'>
+        <button onClick="quadData1();" value="Calc">CALC</button>
+        </div>
+    	</center>
+       
+        
+        <h1>The Quadratic Equation</h1>
+        <center>
+        <div class="h3textsize">
+        <table width="260" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width = '40' rowspan="2"><strong><em><i>x</i></em></strong> = </td>
+				<td class="bottomline">
+				<center><strong><em><i>-b</i></em></strong>&nbsp;<u>+</u>&nbsp;
+        		<strong><em>sqrt(</em></strong><font color='#FF0000'><strong><em><i>b<sup>2</sup></i></em></strong>-<strong><em><i>4ac</i></em></strong></font><strong><em>)</em></strong>
+        	</center>
+        		</td>
+			</tr>
+			<tr>
+				<td><center><strong><em><i>2a</i></em></strong></center></td>
+			</tr>
+		</table>
+        </div>
+        </center>
+        
+        
+        <table width='100%' border='0'><tr><td>
+        <div class="h2textsize">
+        <center><font color='#FF0000'><strong><em><i>b<sup>2</sup></i></em></strong>-<strong><em><i>4ac</i></em></strong>
+        </font>&nbsp;is called the <font color='#FF0000'><strong><em>discriminant</em> (d)</strong>.</font></center>
+        </div>
+        <div class="menutextsize">You can use the discriminant to determine what kind of solutions to look for: </div>
+        </td></tr><tr><td><ul>
+        <div class="menutextsize">
+        <li>If d &gt; 0 then there are two distinct solutions: positive and negative.</li>
+        <li>If d &gt; 0 and a perfect square then there are two distinct <i>rational</i> solutions: positive and negative.</li>
+        <li>If d = 0 then there is one <i>rational</i> solution.</li>
+        <li>If d &lt; 0 then there are no <i>rational</i> solutions (because you cannot take the square root of a negative number).In other words, there are no x intercepts.</li>
+        </div>
+        </ul>
+        </td></tr>
+        </table>
+        
+        <div class='buttons'>
+        <button onClick="hideMenu();" value="Reset">RETURN</button>
+        </div>
+        <!-- End of Game Background -->
+        </div>
+
+        <div id="character_panel" class="tools right">
+          <h1>Tally Sheet</h1>
+          <div id="character">
+            <div id="character_text">
+              <div id="character_text_content"></div>
+            </div>
+            <div id="qualities"></div>
+          </div>
+          <div class='buttons'>
+              <button onClick="hideStats();" value="Reset">Return</button>
+          </div>
+        </div>
+      </div> <!-- End of div.tools_wrapper -->
+      
+      <div id="mid_panel">
+        <div id="title">
+          <div class="label">
+
+            <!-- Game Title: edit this -->
+            <h1>Adventures in <br><span class='fancy'>M</span>athematics</h1>
+            <h2>by K R Hubbell</h2>
+            
+            <!-- End of Game Title -->
+
+            <noscript><p class="noscript_message">This game requires 
+              Javascript.</p></noscript>
+            <p class="click_message">click to begin</p>
+          </div>
+        </div>
+
+        <div id="content_wrapper">
+          <div id="content">
+          </div>
+          <a name="end_of_content"></a>
+        </div>
+
+        <div id="legal">
+          <!-- Your Copyright: edit this -->
+          <p>Content and additional software and design &copy; 2013 Ken Hubbell.</p>
+          <p><img src='media/image/sm-by-nc-nd.png'>The Quadratic Formula song by Joe Coolio <font color="#990000">Free MP3 download: <b>quadratic formula.mp3</b></font></p>
+          <!-- End of Your Copyright -->
+
+          <p>
+            Powered by 
+            <font color="#990000">Undum</font> 
+            and 
+            <font color="#990000">Vorple 
+            <span class="vorple-version"></span></font>.
+ 
+            <!-- This Copyright line must remain in your final file
+                 in stories that use this theme. -->
+            Parts of the software and design &copy; 2010 IDM. 
+            Derivative works must include this copyright line and link.
+          </p>
+	 
+          <!--google analytics-->
+	  <p><iframe id='tracker' class='tracker' width='1' height='1' src='http://www.virtualtechcoach.com/the_quad/LocalFiles/trackingpage/track.html' frameborder='0'></iframe></p>
+        </div>
+      </div>
+    </div> <!-- End of div.page -->
+
+    <!-- Holds UI elements that will be cloned and placed in the main
+         page. This block itself is always hidden. -->
+    <div id="ui_library">
+      <div id="quality" class="quality">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+      </div>
+
+      <div id="quality_group" class="quality_group">
+        <h2 data-attr="title"></h2>
+        <div class="qualities_in_group">
+        </div>
+      </div>
+
+      <div id="progress_bar" class="progress_bar">
+        <span class="name" data-attr="name"></span>
+        <span class="value" data-attr="value"></span>
+        <div class="progress_bar_track">
+          <div class="progress_bar_color" data-attr="width">
+          </div>
+        </div>
+        <span class="left_label" data-attr="left_label"></span>
+        <span class="right_label" data-attr="right_label"></span>
+      </div>
+
+      <hr id="turn_separator">
+    </div>
+    
+    <div id="content_library">
+    </div>
+    </div>
+    
+    <script type="text/javascript" src="lib/jquery-1.7.1.min.js"></script>
+
+	<script type="text/javascript" src="lib/jquery.qtip.min.js"></script>
+  	<script type="text/javascript" src="lib/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.noty.js"></script>   
+    <script type="text/javascript" src="lib/noty/default.js"></script> 
+    <script type="text/javascript" src="lib/noty/layouts.js"></script> 
+    
+   	<script type="text/javascript" src="lib/undum.js"></script>
+   	<script type="text/javascript" src="lib/vorple.min.js"></script>
+    <script type="text/javascript" src="js/quo.js"></script>
+  	<script type="text/javascript" src="js/script.js"></script>
+ 	<script type="text/javascript" src="js/quadratic.js"></script>
+    
+    <!-- Story files -->
+    <script type="text/javascript" src="vorple.game.en.js"></script>
+    
+    <script type="text/javascript" src="special.features.js"></script>
+        
+    <script type="text/javascript" src="scenario.beginning.js"></script>
+    
+    <script type="text/javascript" src="scenario.apprentice.js"></script>
+    <script type="text/javascript" src="scenario.journeyman.js"></script>
+    <script type="text/javascript" src="scenario.sailor.js"></script>
+    <script type="text/javascript" src="scenario.tradesman.js"></script>
+    <script type="text/javascript" src="scenario.investor.js"></script>
+    <script type="text/javascript" src="scenario.alchemist.js"></script>
+    <script type="text/javascript" src="scenario.engineer.js"></script>
+    <script type="text/javascript" src="scenario.master.js"></script>
+    <script type="text/javascript" src="scenario.ending.js"></script>
+      
+    <script type="text/javascript" src="js/calculator.js"></script>
+    
+    <script type="text/javascript">
+		document.getElementById("fouc").style.display="block";
+    </script>
+  </body>
+</html>

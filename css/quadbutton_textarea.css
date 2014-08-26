@@ -1,0 +1,74 @@
+
+input[type=button] {
+  width: 60px;
+  height: 30px;
+  background-color: #CDC694;
+  moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 2px solid #800000;
+  padding: 5px;
+}
+
+.solutiontext {
+	color:#0000ff;
+}
+
+.menutextsize {
+	font-size:16px;
+}
+
+.h3textsize {
+	font-size:22px;
+}
+
+.h2textsize {
+	font-size:16px;
+}
+
+.h4textsize {
+	font-size:18px;
+}
+
+.bottomline {
+	border-bottom:medium;
+	border-bottom-color:#000;
+	border-bottom-style: solid;
+}
+
+textarea{
+	width: 100px;
+	height: 30px;
+	border: 2px solid #800000;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-color:#C7FFF8;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+        border-radius: 5px;
+}
+
+.answertext {
+	width:30em;
+	height: 20px;
+	background-color:#EEEEEE;
+}
+
+.center
+{
+text-align:center;
+}
+
+
+eq {font-size:1.2em;}
+
+
+table.panel td{
+	font-family: verdana,arial,sans-serif;
+	font-size:12px;
+	color:#0000ff;
+        border-style: solid;
+	border-width: 2px;
+	border-color: #000000;   
+        background-color:#9FF781;
+        padding: 8px;
+}

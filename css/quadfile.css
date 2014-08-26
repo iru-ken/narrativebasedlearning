@@ -1,0 +1,200 @@
+
+
+body
+{
+font-family:Verdana;
+color: #black;
+font-size:16px;
+}
+
+
+.strikethrough {
+  position: relative;
+}
+.strikethrough:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 1px solid;
+  border-color: red;
+
+  -webkit-transform:rotate(-5deg);
+  -moz-transform:rotate(-5deg);
+  -ms-transform:rotate(-5deg);
+  -o-transform:rotate(-5deg);
+  transform:rotate(-5deg);
+}
+
+
+
+
+
+.center
+{
+text-align:center;
+}
+
+
+center
+{
+text-align:center;
+}
+
+eblue
+{
+font-family:"Arial";
+font-size:16px;
+color:blue
+}
+
+eblue2
+{
+font-family:"Arial";
+font-size:26px;
+color:blue
+}
+
+
+ered
+{
+font-family:"Arial";
+font-size:16px;
+color:red
+}
+
+eredbig
+{
+font-family:"Arial";
+font-size:16px;
+color:red
+}
+
+eredbold
+{
+font-family:"Arial";
+font-size:16px;
+font-weight: bolder; 
+color:red
+}
+
+egreen
+{
+font-family:"Arial";
+font-size:16px;
+color:green
+}
+
+exp
+{
+font-family:"Arial";
+font-size:16px;
+color:blue;
+font-weight: bolder; 
+text-decoration:underline;
+}
+
+st
+{
+font-family:"Arial";
+font-size:16px;
+color:red;
+text-decoration:underline;
+}
+
+sol
+{
+font-family:"Arial";
+font-size:16px;
+color:red;
+font-weight: bolder; 
+text-decoration:underline;
+}
+
+
+.solution
+{
+
+margin-top:10px;
+margin-bottom:10px;
+margin-right:50px;
+margin-left:50px;
+background-color:#b0e0e6;
+border-style:solid;
+border-color:#1fdb35;
+}
+
+
+
+
+h1
+{
+font-family: Verdana;
+font-size:36px;
+color:blue;
+text-align:center;
+
+line-height: 1em;
+color: #848ccf;
+font-weight:bold;
+
+text-shadow:0px 0px 0 rgb(35,43,110), 1px 1px 0 rgb(-52,-44,23),2px 2px 1px rgba(0,0,0,0.6),2px 2px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);
+}
+
+h12
+{
+font-family: Verdana;
+font-size:26px;
+color:blue;
+text-align:center;
+
+line-height: 1em;
+color: #848ccf;
+font-weight:bold;
+
+text-shadow:0px 0px 0 rgb(35,43,110), 1px 1px 0 rgb(-52,-44,23),2px 2px 1px rgba(0,0,0,0.6),2px 2px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);
+}
+
+hr {
+    height: 3px;
+    color:#00ff00;
+    background-color:#00ff00;
+
+}
+
+
+
+.ThreeExp{
+font-family: Verdana;
+line-height: 1em;
+color: #f50e31;
+font-weight:bold;
+font-size: 26px;
+text-decoration:underline;text-decoration:underline;
+
+text-shadow:0px 0px 0 rgb(35,43,110), 1px 1px 0 rgb(-52,-44,23),2px 2px 1px rgba(0,0,0,0.6),2px 2px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);}
+
+
+
+
+.ThreeSol{
+font-family: Verdana;
+line-height: 1em;
+color: #1fdb35;
+font-weight:bold;
+font-size: 26px;
+text-decoration:underline;text-decoration:underline;
+
+text-shadow:0px 0px 0 rgb(35,43,110), 1px 1px 0 rgb(-52,-44,23),2px 2px 1px rgba(0,0,0,0.6),2px 2px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);}
+
+
+
+
+.ThreeNote{
+font-family: Verdana;
+line-height: 1em;
+color: red;
+font-weight:bold;
+font-size: 16px;
+text-shadow:0px 0px 0 rgb(173,-58,-23), 1px 1px 0 rgb(111,-120,-85),2px 2px 1px rgba(0,0,0,0.6),2px 2px 1px rgba(0,0,0,0.5),0px 0px 1px rgba(0,0,0,.2);}
